@@ -13,17 +13,17 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 Cypress.Commands.add('selectProduct', (productName) => {
-   
-    cy.get("h4[class='card-title']").each(($el, index, $list) =>{
-       if($el.text().includes(productName)){
-    
-        cy.get('button.btn.btn-info').eq(index).click()
-    
-       }
-    
-    })
 
- })
+   cy.get("h4[class='card-title']").each(($el, index, $list) => {
+      if ($el.text().includes(productName)) {
+
+         cy.get('button.btn.btn-info').eq(index).click()
+
+      }
+
+   })
+
+})
 
 //
 // -- This is a child command --
@@ -40,13 +40,12 @@ Cypress.Commands.add('selectProduct', (productName) => {
 
 
 
-Cypress.Commands.add("LoginAPI",()=> {
+Cypress.Commands.add("LoginAPI", () => {
 
-   cy.request("POST","https://rahulshettyacademy.com/api/ecom/auth/login",
-   {"userEmail":"necirvanurekk@gmail.com","userPassword":"Necirvan.123"}).
-   then(function(response)
-   {
-       expect(response.status).to.eq(200)
-      Cypress.env('token',response.body.token);
-   })
+   cy.request("POST", "https://rahulshettyacademy.com/api/ecom/auth/login",
+      { "userEmail": "ValidEmail.com", "userPassword": "ValidPass.123" }).
+      then(function (response) {
+         expect(response.status).to.eq(200)
+         Cypress.env('token', response.body.token);
+      })
 })

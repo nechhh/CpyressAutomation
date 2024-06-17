@@ -22,7 +22,7 @@
     "cypress": "^13.6.4",
     "cypress-sql-server": "^1.0.0",
     "mocha": "^10.1.0",
-    "multiple-cucumber-html-reporter": "^3.6.1",
+    "multiple-cucumber-html-reporter": "^3.6.2",
     "neat-csv": "5.1.0"
   },
   "dependencies": {
